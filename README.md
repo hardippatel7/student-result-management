@@ -15,6 +15,9 @@ Improvements needed
 - Further optmizations can be done based on future scalability.
 - Tests are missing.
 - On Devops side, CI/CD pipelines can be implemented.
+## Frontend URL
+
+The application can be accessed on https://student-result-management.netlify.app/. It has been deployed on https://netlify.com on a free subscription.
 
 ## Backend API URL
 
