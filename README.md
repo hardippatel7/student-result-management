@@ -13,6 +13,8 @@ I am Hardip Patel, I have created this application and has tried to make it prod
 Improvements needed
 - Effective use of virtual field in Student schema could have been done, I could not find any way, need to dig deep into that.
 - Further optmizations can be done based on future scalability.
+- Tests are missing.
+- On Devops side, CI/CD pipelines can be implemented.
 
 ## Backend API URL
 
