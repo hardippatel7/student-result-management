@@ -1,5 +1,4 @@
-﻿// Load the 'users' controller
-var students = require('../../app/controllers/studentController');
+﻿var students = require('../../app/controllers/studentController');
 
 module.exports = function (app) {
 
@@ -7,8 +6,8 @@ module.exports = function (app) {
         .get(students.list)
         .post(students.create);
 
-	app.route('/api/students/:studentId')
-    .delete(students.delete);
-    
+    app.route('/api/students/:studentId')
+        .delete(students.delete);
+
 };
 

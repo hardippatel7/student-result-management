@@ -1,5 +1,6 @@
 const Result = require('mongoose').model('Result');
 
+//Error message function
 function getErrorMessage(err) {
     if (err.errors) {
         for (let errName in err.errors) {
@@ -11,6 +12,7 @@ function getErrorMessage(err) {
     }
 };
 
+//Adds a result
 exports.add = async function (req, res) {
     const result = new Result();
     result.course = req.body.course;
@@ -28,14 +30,15 @@ exports.add = async function (req, res) {
     }
 };
 
+//Gets list of all results
 exports.list = async function (req, res) {
     try {
         const results = await Result.find({})
-            .populate({
+            .populate({         //populate method for selective response.
                 path: 'course',
                 select: '_id courseName'
             })
-            .populate({
+            .populate({         //TODO: firstName and familyName to be replaced by virtual field name 'fullName'
                 path: 'student',
                 select: '_id firstName familyName'
             });
@@ -46,14 +49,4 @@ exports.list = async function (req, res) {
             message: getErrorMessage(err)
         });
     }
-    // Result.find({})
-    //   .populate('course', 'courseName') // Populate the 'course' field with 'courseName'
-    //   .populate('student', 'firstName familyName') // Populate the 'student' field with 'firstName' and 'familyName'
-    //   .exec(function (err, results) {
-    //     if (err) {
-    //       return next(err);
-    //     } else {
-    //       res.json(results);
-    //     }
-    //   });
 };

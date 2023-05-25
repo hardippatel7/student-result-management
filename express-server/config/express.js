@@ -5,10 +5,9 @@ var config = require('./config'),
     compress = require('compression'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override');
-    
-    const cors = require('cors')
 
-    
+const cors = require('cors')
+
 // Create a new Express application instance
 module.exports = function () {
 
@@ -26,10 +25,10 @@ module.exports = function () {
         extended: true
     }));
     app.use(bodyParser.json()); //use middleware that only parses json
-    app.use(function(req, res, next) {
-		res.header("Access-Control-Allow-Origin", "*");
-		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-		next();
+    app.use(function (req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
     });
     app.use(cors());
     //
