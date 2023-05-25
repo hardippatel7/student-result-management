@@ -14,3 +14,7 @@ app.listen(port);
 
 module.exports = app;
 console.log(`Server is running on port ${port}`);
+
+app.get('/', (req, res) => {
+    res.status(200).send({message:"Backend is live"});
+})
