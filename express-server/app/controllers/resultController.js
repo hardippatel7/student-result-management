@@ -1,4 +1,6 @@
-const Result = require('mongoose').model('Result');
+const mongoose = require('mongoose');
+const Result = mongoose.model('Result');
+const Course = mongoose.model('Course');
 
 //Error message function
 function getErrorMessage(err) {
@@ -36,13 +38,17 @@ exports.list = async function (req, res) {
         const results = await Result.find({})
             .populate({         //populate method for selective response.
                 path: 'course',
-                select: '_id courseName'
+                select: '_id courseName',
+                match: { _id: { $exists: true } }
             })
             .populate({         //TODO: firstName and familyName to be replaced by virtual field name 'fullName'
                 path: 'student',
-                select: '_id firstName familyName'
+                select: '_id firstName familyName',
+                match: { _id: { $exists: true } }
             });
-        res.status(200).send(results);
+            const filteredResults = results.filter(result => result.course && result.student);
+
+        res.status(200).send(filteredResults);
     } catch (err) {
         console.log(err);
         res.status(400).send({

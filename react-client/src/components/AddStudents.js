@@ -42,7 +42,7 @@ const AddStudents = () => {
       };
       axios.post(`${apiUrl}/students`, studentData).then((result) => {
         console.log(result);
-        if (result.status === 200) {
+        if (result.status === 201) {
           setNotification('New student added successfully.');
           setFirstName('');
           setFamilyName('');
