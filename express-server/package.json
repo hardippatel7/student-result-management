@@ -1,0 +1,26 @@
+{
+  "name": "student-result-management",
+  "version": "1.0.0",
+  "description": "Student Result Management System",
+  "main": "server.js",
+  "author": {
+    "name": "Hardip Patel",
+    "email": "hardippatel7@gmail.com"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^7.2.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "scripts": {
+    "start": "nodemon server",
+    "dev": "nodemon server"
+  }
+}
