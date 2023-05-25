@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './CoursesList.css';
 const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 //Component function
@@ -43,9 +44,9 @@ const CoursesList = () => {
   };
 
   return (
-    <div>
+    <div className="courses-list-container">
       <h2>Courses List</h2>
-      <table>
+      <table className="courses-table">
         <thead>
           <tr>
             <th>Course Name</th>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './AddStudents.css';
 const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 //Component function
@@ -60,7 +61,7 @@ const AddStudents = () => {
   };
 
   return (
-    <div>
+    <div className="add-student-container">
       <h2>Add New Students</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -103,7 +104,7 @@ const AddStudents = () => {
           <button type="submit">Submit</button>
         </div>
       </form>
-      {notification && <p>{notification}</p>}
+      {notification && <p className="notification">{notification}</p>}
     </div>
   );
 };

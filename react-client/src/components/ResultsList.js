@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './ResultsList.css';
+
 const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 //Component function
@@ -23,7 +25,7 @@ const ListResults = () => {
   }, []);
 
   return (
-    <div>
+    <div className="results-list-container">
       <h2>Results List</h2>
       <table className="results-table">
         <thead>

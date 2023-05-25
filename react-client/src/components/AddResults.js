@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './AddResults.css';
 const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 //Component function
@@ -76,9 +77,9 @@ const AddResults = () => {
   };
 
   return (
-    <div>
+    <div className="add-result-container">
       <h2>Add New Result</h2>
-      {notification && <p>{notification}</p>}
+      {notification && <p className="notification">{notification}</p>}
       <form onSubmit={handleSubmit}>
         <label>
           Course Name:

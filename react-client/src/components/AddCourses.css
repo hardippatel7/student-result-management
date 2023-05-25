@@ -1,0 +1,42 @@
+.add-course-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+}
+
+.add-course-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-course-container form div {
+    margin-bottom: 10px;
+}
+
+.add-course-container label {
+    display: block;
+}
+
+.add-course-container input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.add-course-container button[type="submit"] {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.notification {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #ffc107;
+    color: #fff;
+    text-align: center;
+}
